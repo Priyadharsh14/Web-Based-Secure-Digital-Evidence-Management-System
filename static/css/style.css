@@ -1,0 +1,124 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Body */
+body {
+    background: #f4f6fb;
+}
+
+/* Center Card Layout (Login/Register/Home) */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Card */
+.card {
+    width: 800px;
+    display: flex;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Left */
+.left {
+    width: 50%;
+    background: #fff;
+    padding: 40px;
+}
+
+/* Right */
+.right {
+    width: 50%;
+    background: linear-gradient(135deg, #6a5af9, #7b4bff);
+    color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Inputs */
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+/* Buttons */
+.btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #6a5af9, #7b4bff);
+}
+
+.btn-success {
+    background: #22c55e;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background: #f0f2ff;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+}
+
+.sidebar h2 {
+    color: #5a4bff;
+    margin-bottom: 20px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px;
+    background: #e0e4ff;
+    margin: 10px 0;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+/* Main content */
+.main {
+    margin-left: 240px;
+    padding: 30px;
+}
+
+/* Cards */
+.box {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+/* Table */
+table {
+    width: 100%;
+    margin-top: 20px;
+}
+
+td, th {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}

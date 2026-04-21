@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h2>Authority Panel</h2>
+    <a href="/authority">View Cases</a>
+    <a href="/logs">Audit Logs</a>
+    <a href="/logout">Logout</a>
+</div>
+
+<div class="main">
+
+<h1>Authority Dashboard</h1>
+
+<div class="box">
+
+<h3>Search Cases</h3>
+
+<form method="POST">
+    <input 
+        type="text"
+        name="search" 
+        placeholder="Search by case title..." 
+        value="{{search_query}}"
+    >
+    <button class="btn btn-primary">Search</button>
+</form>
+
+<table>
+<tr>
+<th>ID</th>
+<th>Case Title</th>
+<th>Description</th>
+<th>Action</th>
+</tr>
+
+{% for c in cases %}
+<tr>
+<td>{{c[0]}}</td>
+<td>{{c[1]}}</td>
+<td>{{c[2]}}</td>
+<td>
+    <a href="/case/{{c[0]}}">
+        <button class="btn btn-success">View</button>
+    </a>
+</td>
+</tr>
+{% endfor %}
+
+{% if cases|length == 0 %}
+<tr>
+<td colspan="4" style="text-align:center;">No results found</td>
+</tr>
+{% endif %}
+
+</table>
+
+</div>
+
+</div>
+
+</body>
+</html>

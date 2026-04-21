@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/static/css/style.css">
+
+<style>
+.timeline {
+    margin-top: 20px;
+    border-left: 3px solid #6a5af9;
+    padding-left: 20px;
+}
+
+.event {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #f8f9ff;
+    border-radius: 10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h2>Authority Panel</h2>
+    <a href="/authority">Back</a>
+    <a href="/logs">Audit Logs</a>
+    <a href="/logout">Logout</a>
+</div>
+
+<div class="main">
+
+<h1>Case Details</h1>
+
+<!-- EVIDENCE TABLE -->
+<div class="box">
+<h3>Evidence Files</h3>
+
+<table>
+<tr>
+<th>File</th>
+<th>Action</th>
+</tr>
+
+{% for e in evidence %}
+<tr>
+<td>📄 {{e[1]}}</td>
+<td>
+<a href="/download/{{e[0]}}">
+<button class="btn btn-success">Download</button>
+</a>
+</td>
+</tr>
+{% endfor %}
+
+</table>
+</div>
+
+<!-- TIMELINE -->
+<div class="box">
+<h3>Chain of Custody Timeline</h3>
+
+<div class="timeline">
+
+{% for l in logs %}
+<div class="event">
+<strong>{{l[4]}}</strong> by <b>{{l[3]}}</b><br>
+File: {{l[1]}}<br>
+Time: {{l[5]}}
+</div>
+{% endfor %}
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
